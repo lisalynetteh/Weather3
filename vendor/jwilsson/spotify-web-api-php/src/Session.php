@@ -49,7 +49,7 @@ class Session
             'response_type' => 'code',
             'scope' => isset($options['scope']) ? implode(' ', $options['scope']) : null,
             'show_dialog' => !empty($options['show_dialog']) ? 'true' : null,
-            'state' => isset($options['state']) ? $options['state'] : null,
+            'state' => $options['state'] ?? null,
         ];
 
         return Request::ACCOUNT_URL . '/authorize/?' . http_build_query($parameters);
@@ -151,17 +151,14 @@ class Session
     /**
      * Request an access token using the Client Credentials Flow.
      *
-     * @param array $scope Optional. Scope(s) to request from the user.
-     *
      * @return bool True when an access token was successfully granted, false otherwise.
      */
-    public function requestCredentialsToken($scope = [])
+    public function requestCredentialsToken()
     {
         $payload = base64_encode($this->getClientId() . ':' . $this->getClientSecret());
 
         $parameters = [
             'grant_type' => 'client_credentials',
-            'scope' => implode(' ', $scope),
         ];
 
         $headers = [

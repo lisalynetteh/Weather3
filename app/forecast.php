@@ -1,4 +1,6 @@
 <?php
+require 'vendor/autoload.php';
+
   // Get the address from the form and sanitize it
   $address = htmlspecialchars($_POST["location"]);
 
@@ -39,6 +41,10 @@
 
   // Get our forecast data back
   $forecast = json_decode(file_get_contents($forecast), true);
+
+
+
+
 
 //start spotify
     $session = new SpotifyWebAPI\Session(
