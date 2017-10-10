@@ -1,6 +1,6 @@
 <?php
-require 'vendor/autoload.php';
 
+require 'vendor/autoload.php';
   // Get the address from the form and sanitize it
   $address = htmlspecialchars($_POST["location"]);
 
@@ -43,7 +43,27 @@ require 'vendor/autoload.php';
   $forecast = json_decode(file_get_contents($forecast), true);
 
 
+/*function celsius($temp){
+  $new_temp = ($temp-32)*.5556;
 
+  return $new_temp;
+    /*
+
+    $temp = $forecast['currently']['temperature'];
+
+  //change spotify playlist 
+    if ($temp < 40) {
+      $feels = 'it\'s cold outside today, here\'s a nice playlist for you.';
+      $playlist_term = 'Chill';
+    } else if ($temp > 60{
+      $feels = 'It\'s nice outside today, here\'s a nice playlist for you'; 
+      $playlist_term = 'Warm';
+    } else {
+      $feels = 'It\'s nice outside today, here\'s a nice playlist for you'; 
+      $playlist_term = 'Autumn';
+    }
+
+    */
 
 
 //start spotify
@@ -60,6 +80,8 @@ require 'vendor/autoload.php';
   // Set the code on the API wrapper
   $api->setAccessToken($accessToken);
 
+  $weathersearch=''
+
   $playlist_term = 'Autumn';
 
   $results = $api->search($playlist_term, 'playlist');
@@ -72,5 +94,10 @@ require 'vendor/autoload.php';
   /**
    * DarkSky API Demo
    * @author Pete Medina
-   <img src="sunset.jpg" alt="Beach" style="width:1200px;height:228px;">
+   
    */
+
+
+
+
+

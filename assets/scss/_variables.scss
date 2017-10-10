@@ -83,7 +83,7 @@ $yellow:  #ffd500 !default;
 $green:   #5cb85c !default;
 $teal:    #5bc0de !default;
 $cyan:    #17a2b8 !default;
-$brown: #91603b !default;
+$brownn:  #91603b !default;
 
 $colors: (
   blue: $blue,
@@ -99,7 +99,8 @@ $colors: (
   white: $white,
   gray: $gray-600,
   brown: $brown,
-  gray-dark: $gray-800
+  gray-dark: $gray-800,
+  brownn: $brownn
 ) !default;
 
 $theme-colors: (
@@ -224,7 +225,8 @@ $grid-gutter-width: 30px !default;
 $line-height-lg:         1.5 !default;
 $line-height-sm:         1.5 !default;
 
-$border-width: 1px !default;
+$border-width: 3px !default;
+$border-color: #91603b;
 
 $border-radius:          .25rem !default;
 $border-radius-lg:       .3rem !default;
@@ -244,13 +246,13 @@ $transition-collapse:    height .35s ease !default;
 //
 // Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif:  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$font-family-sans-serif:  'rubik',-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
 $font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace:   Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 
 
 $font-family-other: "Arimo", fantasy !default;
-$font-family-base:       $font-family-other !default;
+$font-family-base:       $font-family-sans-serif !default;
 
 $font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
 $font-size-lg:   1.25rem !default;
@@ -271,7 +273,7 @@ $h5-font-size: 1.25rem !default;
 $h6-font-size: 1rem !default;
 
 $headings-margin-bottom: ($spacer / 2) !default;
-$headings-font-family:   Arimo !default;
+$headings-font-family:    $font-family-sans-serif !default;
 $headings-font-weight:   400 !default;
 $headings-letter-spacing: 0pt !default; // BootCats
 $headings-line-height:   1.15 !default;

@@ -11,5 +11,5 @@
   <body>
 
     <header class="bg-dark text-center text-white"> 
-    <img src="sunset.jpg" alt="Beach" style="width:100%;height:auto;">
+    <img src="sunset2.jpg" alt="Beach" style="width:100%;height:auto;">
     </header>

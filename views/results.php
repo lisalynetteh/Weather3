@@ -3,20 +3,22 @@
   <?php //print_r($forecast); ?>
 </pre>
 <main class="container py-5 text-center">
-  <h1>
-   
+  <h1 class="text-center">
+   Here's the weather in <?php echo $_POST['location']; ?>
   </h1>
   <div class="text-left py-5 mx-auto" style="max-width: 320px;">
     <?php include 'partials/form.php'; ?>
   </div>
-  <div class="card p-4 my-5 mx-auto" style="max-width: 320px;">
+  <div class="card p-4 my-5 mx-auto" style="border-color: #91603b; max-width: 320px; border-width: 4px ">
     <p class="lead text-bold m-0"><?php echo $place; ?></p>
     <h2 class="display-1 mb-0">
       <?php echo round($forecast['currently']['temperature']); ?>&deg;
     </h2>
+
     <p class="lead">
       <?php echo $forecast['currently']['summary']; ?>
     </p>
+    
     <p class="lead">
       Wind Speed: <?php echo round($forecast['currently']['windSpeed']); ?> MPH
     </p>
@@ -27,7 +29,7 @@
   <div class="row">
     <?php foreach($forecast['daily']['data'] as $day): ?>
       <div class="col-12 col-md-4">
-        <div class="card p-4 my-5 mx-auto"">
+        <div class="card p-4 my-5 mx-auto" style="border-color: #91603b; max-width: 320px; border-width: 4px ">
           <p class="lead m-0">
             <?php echo gmdate("l", $day['time']); ?>
           </p>
