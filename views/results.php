@@ -28,8 +28,8 @@
   </div>
   <div class="row">
     <?php foreach($forecast['daily']['data'] as $day): ?>
-      <div class="col-12 col-md-4">
-        <div class="card p-4 my-5 mx-auto" style="border-color: #91603b; max-width: 320px; border-width: 4px ">
+      <div class="col-12 col-md-3">
+        <div class="card p-3 my-4 mx-auto" style="border-color: #91603b; max-width: 320px; border-width: 4px ">
           <p class="lead m-0">
             <?php echo gmdate("l", $day['time']); ?>
           </p>
@@ -41,8 +41,11 @@
           </p>
         </div>
       </div>
+
+
     <?php endforeach; ?>
-    <h2 class="display-3 py-4"><?php echo ucfirst($playlist_term); ?></h2>
+    <h1 class="container text-center p-3 py-4"> <?php echo $heisann ?> </h1>
+    <h2 class=" container display-3 py-4 text-center mx-auto"><?php echo ucfirst($playlist_term); ?></h2>
 
       <section class="row">
 

@@ -47,23 +47,13 @@ require 'vendor/autoload.php';
   $new_temp = ($temp-32)*.5556;
 
   return $new_temp;
-    /*
-
-    $temp = $forecast['currently']['temperature'];
+    
+*/
+   
 
   //change spotify playlist 
-    if ($temp < 40) {
-      $feels = 'it\'s cold outside today, here\'s a nice playlist for you.';
-      $playlist_term = 'Chill';
-    } else if ($temp > 60{
-      $feels = 'It\'s nice outside today, here\'s a nice playlist for you'; 
-      $playlist_term = 'Warm';
-    } else {
-      $feels = 'It\'s nice outside today, here\'s a nice playlist for you'; 
-      $playlist_term = 'Autumn';
-    }
 
-    */
+    
 
 
 //start spotify
@@ -80,9 +70,29 @@ require 'vendor/autoload.php';
   // Set the code on the API wrapper
   $api->setAccessToken($accessToken);
 
-  $weathersearch=''
+  $weathersearch='';
 
-  $playlist_term = 'Autumn';
+
+
+
+
+   $temp = $forecast['currently']['temperature'];
+    $heisann = "";
+
+
+if ($temp < 40) {
+  $heisann ="It is cold outside today, here are some playlists for you.";
+  $playlist_term = 'Chilly';
+}
+else {
+      $heisann ="It is warm outside today, here are some playlists for you.";
+  $playlist_term = 'Acoustic';
+    }
+
+
+
+
+  //$playlist_term = 'Winter';
 
   $results = $api->search($playlist_term, 'playlist');
 
