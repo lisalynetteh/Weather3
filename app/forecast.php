@@ -80,16 +80,21 @@ require 'vendor/autoload.php';
     $heisann = "";
 
 
-if ($temp < 40) {
-  $heisann ="It is cold outside today, here are some playlists for you.";
-  $playlist_term = 'Chilly';
+if ($temp <= 60) {
+  $heisann ="It's cold outside today, here are some playlists for you to enjoy.";
+  $playlist_term = 'Relax';
+
 }
 else {
-      $heisann ="It is warm outside today, here are some playlists for you.";
+      $heisann ="It's warm outside today, here are some playlists for you to enjoy.";
   $playlist_term = 'Acoustic';
     }
 
+  function celsius($temp){
+    $new_temp = ($temp-32)*.5556;
+   return $new_temp; 
 
+   }
 
 
   //$playlist_term = 'Winter';

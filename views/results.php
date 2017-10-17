@@ -2,19 +2,23 @@
 <pre>
   <?php //print_r($forecast); ?>
 </pre>
-<main class="container py-5 text-center">
-  <h1 class="text-center">
-   Here's the weather in <?php echo $_POST['location']; ?>
+<main class="container py-5 text-center" >
+  <h1 class="animated fadeInDown text-center">
+   Here is the weather in <?php echo $_POST['location']; ?>
   </h1>
   <div class="text-left py-5 mx-auto" style="max-width: 320px;">
     <?php include 'partials/form.php'; ?>
   </div>
   <div class="card p-4 my-5 mx-auto" style="border-color: #91603b; max-width: 320px; border-width: 4px ">
     <p class="lead text-bold m-0"><?php echo $place; ?></p>
-    <h2 class="display-1 mb-0">
-      <?php echo round($forecast['currently']['temperature']); ?>&deg;
-    </h2>
 
+
+    <h2 class="animated fadeIn display-1 mb-0">
+      <?php echo round($forecast['currently']['temperature']); ?>&deg;F
+    </h2>
+    <h2 class ="animated fadeIn display-4 mb-0">
+    <?php echo round(celsius($forecast['currently']['temperature'])); ?>&deg;C
+</h2>
     <p class="lead">
       <?php echo $forecast['currently']['summary']; ?>
     </p>
@@ -29,14 +33,17 @@
   <div class="row">
     <?php foreach($forecast['daily']['data'] as $day): ?>
       <div class="col-12 col-md-3">
-        <div class="card p-3 my-4 mx-auto" style="border-color: #91603b; max-width: 320px; border-width: 4px ">
+        <div class="animated fadeIn card p-3 my-4 mx-auto" style="border-color: #91603b; max-width: 320px; border-width: 4px ">
           <p class="lead m-0">
             <?php echo gmdate("l", $day['time']); ?>
           </p>
-          <h2 class="m-0">
-            <?php echo round($day['temperatureHigh']); ?>&deg;
+          <h2 class="text-bold py-1 m-0">
+            <?php echo round($day['temperatureHigh']); ?>&deg;F
           </h2>
-          <p class="lead text-left">
+          <h2 class ="m-0">
+    <?php echo round(celsius($day['temperatureHigh'])); ?>&deg;C
+</h2>
+          <p class="lead text-center">
             <?php echo $day['summary']; ?>
           </p>
         </div>
@@ -44,7 +51,7 @@
 
 
     <?php endforeach; ?>
-    <h1 class="container text-center p-3 py-4"> <?php echo $heisann ?> </h1>
+    <h1 class="container text-center p-2 py-4 my-4" style="border-color: #91603b; border-width: 4px "> <?php echo $heisann ?> </h1>
     <h2 class=" container display-3 py-4 text-center mx-auto"><?php echo ucfirst($playlist_term); ?></h2>
 
       <section class="row">
