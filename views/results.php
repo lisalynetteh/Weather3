@@ -1,8 +1,8 @@
 <?php include 'partials/header.php'; ?>
-<pre>
+<!--<pre>
   <?php //print_r($forecast); ?>
-</pre>
-<main class="container py-5 text-center" >
+</pre>-->
+<main class="container py-5 text-center" style="background: #fff6f0;" >
   <h1 class="animated fadeInDown text-center">
    Here is the weather in <?php echo $_POST['location']; ?>
   </h1>
@@ -19,8 +19,9 @@
     <h2 class ="animated fadeIn display-4 mb-0">
     <?php echo round(celsius($forecast['currently']['temperature'])); ?>&deg;C
 </h2>
-    <p class="lead">
-      <?php echo $forecast['currently']['summary']; ?>
+
+    <p class="lead text-center">
+      <img src="images/<?php echo$forecast['currently']['icon'];?>.png" alt="<?php echo $forecast['currently']['icon'];?>" style=" height: 100px; width: auto;" >
     </p>
     
     <p class="lead">
@@ -37,10 +38,10 @@
           <p class="lead m-0">
             <?php echo gmdate("l", $day['time']); ?>
           </p>
-          <h2 class="text-bold py-1 m-0">
+          <h2 class="text-bold py-1 m-0 display-4">
             <?php echo round($day['temperatureHigh']); ?>&deg;F
           </h2>
-          <h2 class ="m-0">
+          <h2 class ="m-0 display-5">
     <?php echo round(celsius($day['temperatureHigh'])); ?>&deg;C
 </h2>
           <p class="lead text-center">
@@ -49,10 +50,11 @@
         </div>
       </div>
 
-
     <?php endforeach; ?>
-    <h1 class="container text-center p-2 py-4 my-4" style="border-color: #91603b; border-width: 4px "> <?php echo $heisann ?> </h1>
-    <h2 class=" container display-3 py-4 text-center mx-auto"><?php echo ucfirst($playlist_term); ?></h2>
+<HR WIDTH="90%" color=#91603b; padding=4px;>
+
+    <h1 class="container-fluid no-padding text-center py-4 my-4" style="width:100%; "> <?php echo $heisann ?> </h1>
+    <h2 class="container display-3 py-4 text-center mx-auto"><?php echo ucfirst($playlist_term); ?></h2>
 
       <section class="row">
 

@@ -10,7 +10,6 @@
 
   </head>
   <body class="">
-
     <header class="bg-dark text-center text-white"> 
     <img src="sunset3.jpg" alt="Beach" style="width:100%;height:auto;">
     </header>

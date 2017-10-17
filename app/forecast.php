@@ -81,12 +81,12 @@ require 'vendor/autoload.php';
 
 
 if ($temp <= 60) {
-  $heisann ="It's cold outside today, here are some playlists for you to enjoy.";
+  $heisann ="It's cold outside today, here are some Spotify playlists for you to enjoy.";
   $playlist_term = 'Relax';
 
 }
 else {
-      $heisann ="It's warm outside today, here are some playlists for you to enjoy.";
+      $heisann ="It's warm outside today, here are some Spotify playlists for you to enjoy.";
   $playlist_term = 'Acoustic';
     }
 
