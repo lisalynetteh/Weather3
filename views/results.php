@@ -2,7 +2,7 @@
 <!--<pre>
   <?php //print_r($forecast); ?>
 </pre>-->
-<main class="container py-5 text-center" style="background: #fff6f0;" >
+<main class="container-fluid py-5 text-center" style="background: #fff6f0;" >
   <h1 class="animated fadeInDown text-center">
    Here is the weather in <?php echo $_POST['location']; ?>
   </h1>
@@ -51,7 +51,7 @@
       </div>
 
     <?php endforeach; ?>
-<HR WIDTH="90%" color=#91603b; padding=4px;>
+<HR WIDTH="90%" color="gray"; padding=4px;>
 
     <h1 class="container-fluid no-padding text-center py-4 my-4" style="width:100%; "> <?php echo $heisann ?> </h1>
     <h2 class="container display-3 py-4 text-center mx-auto"><?php echo ucfirst($playlist_term); ?></h2>

@@ -1,6 +1,6 @@
 <?php include 'partials/header.php'; ?>
 
-<main class="container py-5" style="background: #fff6f0;  " >
+<main class="container-fluid py-5" style="background: #fff6f0;  " >
   <h1 class="animated fadeInDown text-center">
    How's the weather?
   </h1>
